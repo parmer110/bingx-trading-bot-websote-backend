@@ -1,0 +1,16 @@
+INFO:     Started server process [1258]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     139.84.177.28:0 - "GET /api/user/capital-usdt HTTP/1.0" 200 OK
+INFO:     139.84.177.28:0 - "GET /api/bingx/balance HTTP/1.0" 203 Non-Authoritative Information
+INFO:     139.84.177.28:0 - "GET /api/position/all/open HTTP/1.0" 200 OK
+INFO:     139.84.177.28:0 - "PATCH /api/trading-bot/deactivate HTTP/1.0" 200 OK
+INFO:     139.84.177.28:0 - "GET /api/bingx/balance HTTP/1.0" 203 Non-Authoritative Information
+INFO:     139.84.177.28:0 - "GET /api/position/all/open HTTP/1.0" 200 OK
+INFO:     139.84.177.28:0 - "GET /api/user/capital-usdt HTTP/1.0" 200 OK
+INFO:     139.84.177.28:0 - "PATCH /api/trading-bot/deactivate HTTP/1.0" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1258]
