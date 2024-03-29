@@ -1,3 +1,5 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SignupForm from './components/signuplogin/SignupForm';
 import { useEffect, useState } from "react";
 import { axiosBase } from "./api/axios";
 import { AppContext } from "./context/AppContext";
@@ -83,15 +85,21 @@ export default function App() {
   return (
     <div className="h-full w-full">
       <DeviceContextProvider>
-        <AppContext.Provider value={{ appState, setAppState }}>
-          <UserContext.Provider value={{ user, setUser }}>
-            {appState === "login" || appState === "otp" ? (
-              <SignupLogin />
-            ) : appState === "home" ? (
-              <Home />
-            ) : null}
-          </UserContext.Provider>
-        </AppContext.Provider>
+        <Router>
+          <AppContext.Provider value={{ appState, setAppState }}>
+            <UserContext.Provider value={{ user, setUser }}>
+              <Routes>
+              <Route path="/signup" element={<SignupForm />} />
+              {appState === "login" || appState === "otp" ? (
+                <Route path="/login" element={<SignupLogin />} />
+              ) : appState === "home" ? (
+                <Route path="/home" element={<Home />} />
+              ) : null}
+              <Route path="*" element={<SignupLogin />} />
+            </Routes>
+            </UserContext.Provider>
+          </AppContext.Provider>
+        </Router>
       </DeviceContextProvider>
     </div>
   );

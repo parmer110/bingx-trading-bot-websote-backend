@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { Link } from 'react-router-dom';
 import { ImSpinner2 } from "react-icons/im";
 import SignupForm from "./SignupForm"; // Import the SignupForm component
 import { axiosBase } from "../../api/axios";
@@ -83,13 +84,14 @@ export default function SignupLoginCard() {
         <div className="text-center">
           <p className="text-xs text-gray-600">
             حساب کاربری ندارید؟{" "}
-            <button
-              type="button"
-              onClick={() => setAppState("signup")}
-              className="text-primary underline focus:outline-bullish"
-            >
-              ثبت نام
-            </button>
+            <Link to="/signup">
+              <button
+                type="button"
+                className="text-primary underline focus:outline-bullish"
+              >
+                ثبت نام
+              </button>
+            </Link>
           </p>
         </div>
       </form>
